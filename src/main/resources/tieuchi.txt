@@ -1,0 +1,27 @@
+1 
+Tiêu chí đào tạo
+Đánh giá chất lượng đào tạo của khoa bao gồm các hoạt động giảng dạy, hướng dẫn, học tập và kiểm tra đánh giá kết quả học tập của sinh viên.
+
+2
+Tiêu chí nghiên cứu khoa học
+Đánh giá chất lượng các hoạt động nghiên cứu khoa học của khoa bao gồm các dự án, bài báo, tạp chí, đề tài nghiên cứu khoa học 
+và các hoạt động hợp tác với các đối tác trong và ngoài nước.
+
+3
+Tiêu chí về các hoạt động quản lý
+Đánh giá các hoạt động quản lý của khoa, bao gồm việc quản lý tài sản, nhân sự, hỗ trợ sinh viên, vận hành hệ thống thông 
+tin và các hoạt động khác liên quan đến quản lý và phát triển khoa.
+
+4
+Tiêu chí về đội ngũ giảng viên
+Đánh giá chất lượng đội ngũ giảng viên của khoa, bao gồm trình độ, kinh nghiệm, năng lực giảng dạy và nghiên cứu khoa học, 
+cũng như các hoạt động hỗ trợ sinh viên và các hoạt động khác của giảng viên.
+
+5
+Tiêu chí về cơ sở vật chất và trang thiết bị
+Đánh giá chất lượng cơ sở vật chất và trang thiết bị của khoa, bao gồm đầy đủ, đáp ứng nhu cầu của hoạt động 
+đào tạo và nghiên cứu khoa học của khoa.
+
+6
+Tiêu chí về các hoạt động hỗ trợ sinh viên
+Đánh giá chất
