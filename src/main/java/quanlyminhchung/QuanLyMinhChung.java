@@ -46,6 +46,10 @@ public class QuanLyMinhChung {
                 .thenComparing(MinhChung::getTen, Comparator.reverseOrder()));
     }
     
+    public void sapXep2(){
+        this.danhSachMinhChung.sort(Comparator.comparing(MinhChung::getTen)
+                .thenComparing(MinhChung::getTen, Comparator.reverseOrder()));
+    }
 //    public ArrayList<NhanVien> timKiem(String tuKhoa) {
 //        ArrayList<NhanVien> ds = new ArrayList<>();
 //        for (NhanVien x : this.danhSachNhanVien) {
@@ -78,14 +82,17 @@ public class QuanLyMinhChung {
         return this.danhSachMinhChung.stream().filter(c -> c.getNoiBanHanh().equals(ten)).collect(Collectors.toList());
     }
     
-//    public List<MinhChung> timKiem(Date kw) {
-//        return this.danhSachMinhChung.stream().filter(h -> h.getNgayBanHanh().equals(f.format(kw)) == true)
-//                .collect(Collectors.toList());
+    public List<MinhChung> timKiem(Date kw) {
+        return this.danhSachMinhChung.stream().filter(h -> h.getNgayBanHanh().equals(kw) == true)
+                .collect(Collectors.toList());
+    }
+      
+//    public List<MinhChung> timMinhChungTheoTenHoacPB(String kw) { // timtheo ten
+//        return this.danhSachMinhChung.stream().filter(c -> c.getNoiBanHanh().equals(kw)).collect(Collectors.toList());
 //    }
     
-//    public List<MinhChung> timMinhChung(String noiBanHanh) { // timtheo ten
-//        return this.danhSachMinhChung.stream().filter(c -> c.getNoiBanHanh().equals(noiBanHanh)).collect(Collectors.toList());
-//    }
+    
+    
     
     public void hienThi(){
         this.getDanhSachMinhChung().forEach(v -> v.hienThi());

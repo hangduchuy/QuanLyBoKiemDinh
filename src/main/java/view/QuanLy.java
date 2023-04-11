@@ -11,14 +11,9 @@ import static cauhinh.CauHinh.sc;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.Date;
-import people.ThanhVien;
 import quanlyminhchung.MinhChung;
+import quanlyminhchung.PhongBan;
 import quanlyminhchung.QuanLyMinhChung;
-
-
-
-
-
 
 /**
  *
@@ -27,15 +22,32 @@ import quanlyminhchung.QuanLyMinhChung;
 public class QuanLy {
     
     private QuanLyMinhChung qlmc = new QuanLyMinhChung();
-    
+    MinhChung mc = new MinhChung();
+     
     public static void main(String[] args) throws FileNotFoundException, ParseException, Exception {
-        ThanhVien tv = new ThanhVien();
+//        ThanhVien tv = new ThanhVien();
         MinhChung mc = new MinhChung();
-        QuanLy q = new QuanLy();      
+        QuanLy q = new QuanLy();   
         
-        q.qlmc.themMC("src/main/resources/minhchung.txt");
+//        q.qlmc.themMC("src/main/resources/minhchung.txt");
 //        mc.themPhongBan("src/main/resources/phongban.txt");
-        tv.themMinhChung("src/main/resources/minhchung.txt");
+//        tv.themMinhChung("src/main/resources/minhchung.txt");
+        //Minh Chung
+        MinhChung mc1 = new MinhChung("1","Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
+        MinhChung mc2 = new MinhChung("2","Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
+        MinhChung mc3 = new MinhChung("3","Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
+        MinhChung mc4 = new MinhChung("4","Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
+        MinhChung mc5 = new MinhChung("5","Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
+        MinhChung mc6 = new MinhChung("6","Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
+        //Phong Ban
+        PhongBan pb1 = new PhongBan("Phong dao tao", "04/10/2023", "04/10/2023", mc1);
+        PhongBan pb2 = new PhongBan("Phong tuyen dung", "03/10/2023", "03/10/2023", mc1);
+        PhongBan pb3 = new PhongBan("Phong chat luong", "05/10/2023", "05/10/2023", mc2);
+        PhongBan pb4 = new PhongBan("Phong nhan su", "07/10/2023", "07/10/2023", mc3);
+        PhongBan pb5 = new PhongBan("Phong kinh doanh", "08/10/2023", "08/10/2023", mc4);
+        //
+        mc.themPhongBan(pb1, pb2, pb3, pb4, pb5);
+        q.qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
         
         int luaChon;
         do  {
@@ -110,7 +122,9 @@ public class QuanLy {
             System.out.println("=============MENU==============");          
             System.out.println(
                     "1. Tim minh chung theo ten, co quan, ngay\n"
-                  + "2. Tim cac minh chung theo phong ban cung cap\n"                                        
+                  + "2. Tim cac minh chung theo phong ban cung cap\n"
+                  + "3. Sap xep cac minh chung theo ngay\n"   
+                  + "4. Sap xep cac minh chung theo ten\n"        
                   + "0. Quay lai");
             System.out.println("Vui long chon chuc nang: ");
             luaChon = sc.nextInt();
@@ -119,28 +133,46 @@ public class QuanLy {
                     q.timKiemMinhChung();
                 }
                 case 2 ->  {
-                    
+//                    System.out.print("Nhap ten phong ban can tim kiem: ");
+//                    String name = sc.nextLine();
+//                    
+//                    if (this.mc.timKiemMinhChungTheoPhongBan(name).isEmpty()) {
+//                        System.out.println("Phong ban chua duoc cap nhap");
+//                    } else {
+//                        System.out.println("Ket qua tim kiem la: ");
+//                        this.mc.timKiemMinhChungTheoPhongBan(name).forEach(h -> h.getMinhChung().forEach(g -> g.hienThiNhanVien()));
                 }
                 
+                case 3 ->  {
+                    System.out.println("Ket qua sap xep: ");
+                    q.qlmc.sapXep();
+                    q.qlmc.hienThi();
+                }
+                
+                case 4 ->  {
+                    System.out.println("Ket qua sap xep: ");
+                    q.qlmc.sapXep2();
+                    q.qlmc.hienThi();
+                }
             }      
         }while(luaChon != 0); 
     }
     
     public void timKiemMinhChung() throws Exception {
-        if (this.getQlmc().getDanhSachMinhChung().isEmpty()) {
+        if (this.qlmc.getDanhSachMinhChung().isEmpty()) {
             System.out.println("Danh sach minh chung rong!");
-        } else {
-            
+        } else {          
             System.out.println("Tim kiem minh chung theo:");
             System.out.println(" 1/ ten");
             System.out.println(" 2/ Ngay Ban Hanh");
             System.out.println(" 3/ Noi Ban Hanh");
+//            System.out.println(" 4/ Phong ban cung cap minh chung");
             System.out.print("Lua chon cua ban la: ");
             
             int luaChon = sc.nextInt();
             switch (luaChon) {
                 
-                case 1: {
+                case 1 -> {
                     System.out.print("Nhap ho ten: ");
                     sc.nextLine();
                     String name = sc.nextLine();
@@ -151,26 +183,46 @@ public class QuanLy {
                         this.qlmc.timKiem(name).forEach(h -> h.hienThi());
                     }
                 }
-                case 2: {
-//                    System.out.print("Nhap ngay sinh: ");
-//                    Date birth = f.parse(sc.nextLine());
-//                    this.nhanVien.timKiem(birth).forEach(h -> h.hienThiNhanVien());
+                
+                case 2 -> {
+                    System.out.print("Nhap ngay sinh: ");
+                    sc.nextLine();
+                    Date birth = f.parse(sc.nextLine());
+                    
+                    if (this.qlmc.timKiem(birth).isEmpty()) {
+                        System.out.println("Khong tim thay minh chung!");
+                    }else {
+                        this.qlmc.timKiem(birth).forEach(h -> h.hienThi());
+                    }
                 }
-                case 3: {
-//                    if (this.phongBan.getDanhSachPhongBan().isEmpty()) {
+                
+                case 3 -> {
+                    System.out.print("Nhap noi ban hanh: ");
+                    sc.nextLine();
+                    String name = sc.nextLine();
+                    
+                    if (this.qlmc.timMinhChungTheoNoiBanHanh(name).isEmpty()) {
+                        System.out.println("Khong tim thay minh chung!");
+                    } else {
+                        this.qlmc.timMinhChungTheoNoiBanHanh(name).forEach(h -> h.hienThi());
+                    }
+                }   
+                
+                case 4 -> {
+//                    System.out.print("Nhap ten phong ban can tim kiem: ");
+//                    String name = sc.nextLine();
+//                    
+//                    if (this.qlmc.timKiemMinhChungTheoPhongBan(name).isEmpty()) {
 //                        System.out.println("Phong ban chua duoc cap nhap");
 //                    } else {
-//                        System.out.print("Nhap ten phong ban can tim kiem: ");
-//                        String name = sc.nextLine();
 //                        System.out.println("Ket qua tim kiem la: ");
-//                        this.phongBan.timKiem(name).forEach(h -> h.getNhanVienTrucThuoc().forEach(g -> g.hienThiNhanVien()));
-//                    }
-                }              
+//                        this.qlmc.timKiem(name).forEach(h -> h.getDsPhongBan().forEach(g -> g.hienThiPhongBan()));
+                    }
+                }   
             }
             
                 
         }
-    }
 
     /**
      * @return the qlmc
@@ -185,6 +237,5 @@ public class QuanLy {
     public void setQlmc(QuanLyMinhChung qlmc) {
         this.qlmc = qlmc;
     }
+ 
 }
-       
-

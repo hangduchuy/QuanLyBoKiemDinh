@@ -16,17 +16,30 @@ public class PhongBan {
     private String ten;
     private Date ngayPhongBanCungCapMC;
     private Date ngayTaoMC;
+    private MinhChung minhChung;
 
-    public PhongBan(String ten, Date ngayPhongBanCungCapMC, Date ngayTaoMC) {
+    
+    public PhongBan(String ten, Date ngayPhongBanCungCapMC, Date ngayTaoMC, MinhChung minhChung) {
         this.ten = ten;
         this.ngayPhongBanCungCapMC = ngayPhongBanCungCapMC;
         this.ngayTaoMC = ngayTaoMC;
+        this.minhChung = minhChung;
     }
 
-    public PhongBan(String ten, String ngayPhongBanCungCapMC, String ngayTaoMC) throws ParseException {
-        this(ten, f.parse(ngayPhongBanCungCapMC), f.parse(ngayTaoMC));
+    public PhongBan(String ten, String ngayPhongBanCungCapMC, String ngayTaoMC, MinhChung minhChung) throws ParseException {
+        this(ten, f.parse(ngayPhongBanCungCapMC), f.parse(ngayTaoMC), minhChung);
     }
        
+    public void hienThiPhongBan() {
+        System.out.printf("- %s -\n", this.ten.toUpperCase());
+        System.out.printf("Ten phong ban: %s\n", this.ten);
+        System.out.printf("ngay phong ban cung cap: %s\n", this.ngayPhongBanCungCapMC);
+        System.out.printf("ngay tao minh chung: %s\n", this.ngayTaoMC);
+    }
+    
+    public void themMinhChung(MinhChung q) {
+        q.themPhongBan(this);
+    }
     
     /**
      * @return the ten
@@ -68,5 +81,19 @@ public class PhongBan {
      */
     public void setNgayTaoMC(Date ngayTaoMC) {
         this.ngayTaoMC = ngayTaoMC;
+    }
+
+    /**
+     * @return the minhChung
+     */
+    public MinhChung getMinhChung() {
+        return minhChung;
+    }
+
+    /**
+     * @param minhChung the minhChung to set
+     */
+    public void setMinhChung(MinhChung minhChung) {
+        this.minhChung = minhChung;
     }
 }

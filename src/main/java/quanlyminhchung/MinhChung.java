@@ -9,10 +9,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.stream.Collectors;
 
 /**
  *
@@ -20,48 +21,57 @@ import java.util.Scanner;
  */
 public class MinhChung {
 
-   
     private String id; // mã minh chứng
     private String ten; // tên minh chứng
     private String noiBanHanh; // cơ quan ban hành minh chứng
     private Date ngayBanHanh; // ngày ban hành minh chứng
-    private List<PhongBan> dsPhongBan; // danh sách các phòng ban chịu trách nhiệm cung cấp minh chứ
+    private List<PhongBan> dsPhongBan = new ArrayList<>(); // danh sách các phòng ban chịu trách nhiệm cung cấp minh chứ
 
     public MinhChung() {
-       
+
     }
-    
+
     public MinhChung(String id, String ten, String noiBanHanh, Date ngayBanHanh) {
         this.id = id;
         this.ten = ten;
         this.noiBanHanh = noiBanHanh;
         this.ngayBanHanh = ngayBanHanh;
-        this.dsPhongBan = new ArrayList<>();
+
     }
-    
+
     public MinhChung(String id, String ten, String noiBanHanh, String ngayBanHanh) throws ParseException {
-        this(id, ten, noiBanHanh,f.parse(ngayBanHanh));
+        this(id, ten, noiBanHanh, f.parse(ngayBanHanh));
     }
-    
-    public void hienThi(){
-        System.out.printf("%s. %s, %s, %s\n",this.id,this.ten,this.noiBanHanh,f.format(this.ngayBanHanh));
+
+    public void hienThi() {
+        System.out.printf("%s. %s, %s, %s\n", this.id, this.ten, this.noiBanHanh, f.format(this.ngayBanHanh));
     }
-  
-    public void themPhongBan(String path) throws FileNotFoundException, ParseException {
-        File f = new File(path);
-        try (Scanner sc = new Scanner(f)) {
-            while (sc.hasNext()) {
-                PhongBan m = new PhongBan(sc.nextLine(), sc.nextLine(), sc.nextLine());
-                this.dsPhongBan.add(m);
-            }
+
+    public ArrayList<PhongBan> timKiemMinhChungTheoPhongBan(String kw) {
+        return (ArrayList<PhongBan>) this.dsPhongBan.stream().
+                filter(h -> h.getTen().toLowerCase()
+                .contains(kw.toLowerCase())).collect(Collectors.toList());
+    }
+        
+    public void themPhongBan(PhongBan... a) {
+        this.dsPhongBan.addAll(Arrays.asList(a));
+        for (PhongBan x : a) {
+            x.setMinhChung(this);
         }
     }
-    
+
+//    public void themPhongBan(String path) throws FileNotFoundException, ParseException {
+//        File f = new File(path);
+//        try (Scanner sc = new Scanner(f)) {
+//            while (sc.hasNext()) {
+//                PhongBan m = new PhongBan(sc.nextLine(), sc.nextLine(), sc.nextLine());
+//                this.dsPhongBan.add(m);
+//            }
+//        }
+//    }
     /**
      * @return the id
      */
-   
-
     public String getId() {
         return id;
     }
