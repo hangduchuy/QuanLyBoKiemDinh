@@ -15,6 +15,7 @@ import quanlyminhchung.MinhChung;
 import quanlyminhchung.PhongBan;
 import quanlyminhchung.PhongDamBaoChatLuong;
 import quanlyminhchung.QuanLyMinhChung;
+import quanlyminhchung.TieuChi;
 
 /**
  *
@@ -48,7 +49,14 @@ public class QuanLy {
         PhongBan pb4 = new PhongBan("Phong nhan su", "07/10/2023", "07/10/2023", mc3);
         PhongBan pb5 = new PhongBan("Phong kinh doanh", "08/10/2023", "08/10/2023", mc4);
         PhongBan pb6 = new PhongBan("Phong dao tao", "05/10/2023", "04/10/2023", mc2);
-        //
+        //Tieu Chi
+        TieuChi tc1 = new TieuChi("1", "Tiêu chí đào tạo", "Đánh giá chất lượng đào tạo của khoa bao gồm các hoạt động giảng dạy, hướng dẫn, học tập và kiểm tra đánh giá kết quả học tập của sinh viên");
+        TieuChi tc2 = new TieuChi("2", "Tiêu chí về đội ngũ giảng viên", "Đánh giá chất lượng đội ngũ giảng viên của khoa, bao gồm trình độ, kinh nghiệm, năng lực giảng dạy và nghiên cứu khoa học, " 
+                +"cũng như các hoạt động hỗ trợ sinh viên và các hoạt động khác của giảng viên.");
+        TieuChi tc3 = new TieuChi("3", "Tiêu chí về cơ sở vật chất và trang thiết bị", "Đánh giá chất lượng cơ sở vật chất và trang thiết bị của khoa, bao gồm đầy đủ, đáp ứng nhu cầu của hoạt động " 
+                +"đào tạo và nghiên cứu khoa học của khoa.");
+        TieuChi tc4 = new TieuChi("4", "Tiêu chí về các hoạt động hỗ trợ sinh viên", "Đánh giá chất");
+
         mc.themPhongBan(pb1, pb2, pb3, pb4, pb5, pb6);
         q.qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
 

@@ -19,11 +19,16 @@ public class TieuChi {
     private String noiDung;
     private List<MinhChung> minhChung; // danh sách minh chứng cho tiêu chí này
 
+    public TieuChi() {
+               
+    }
+    
     public TieuChi(String id, String ten, String noiDung) {
         this.id = id;
         this.ten = ten;
         this.noiDung = noiDung;
         this.minhChung = new ArrayList<>();
+        
     }
 
     
