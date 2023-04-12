@@ -47,19 +47,20 @@ public class QuanLy {
         PhongBan pb3 = new PhongBan("Phong chat luong", "05/10/2023", "05/10/2023", mc2);
         PhongBan pb4 = new PhongBan("Phong nhan su", "07/10/2023", "07/10/2023", mc3);
         PhongBan pb5 = new PhongBan("Phong kinh doanh", "08/10/2023", "08/10/2023", mc4);
+        PhongBan pb6 = new PhongBan("Phong dao tao", "05/10/2023", "04/10/2023", mc2);
         //
-        mc.themPhongBan(pb1, pb2, pb3, pb4, pb5);
+        mc.themPhongBan(pb1, pb2, pb3, pb4, pb5, pb6);
         q.qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
 
         int luaChon;
         do {
             System.out.println("=============MENU==============");
             System.out.println(
-                    "1. Phan quyen cho thanh vien\n"
-                    + "2. Cap quyen cho thanh vien\n"
-                    + "3. Them bo kiem dinh\n"
-                    + "4. Them tieu chuan\n"
-                    + "5. Them tieu chi\n"
+                    "1. Them bo kiem dinh\n"
+                    + "2. Them tieu chuan\n"
+                    + "3. Them tieu chi\n"
+                    + "4. Phan quyen cho thanh vien\n"
+                    + "5. Cap quyen cho thanh vien\n"
                     + "6. Quan ly thanh vien\n"
                     + "7. Quan ly minh chung\n"
                     + "0. Thoat chuong trinh");
@@ -67,15 +68,15 @@ public class QuanLy {
             luaChon = sc.nextInt();
             switch (luaChon) {
                 case 1 -> {
-
+                    kd.nhapBoKiemDinh();
+//                    this.pdbcl.themBoKiemDinh(kd);
+                    System.out.println("Them bo kiem dinh thanh cong");
                 }
                 case 2 -> {
 
                 }
                 case 3 -> {
-                    kd.nhapBoKiemDinh();
-//                    this.pdbcl.themBoKiemDinh(kd);
-                    System.out.println("Them bo kiem dinh thanh cong");
+                    
                 }
                 case 4 -> {
 

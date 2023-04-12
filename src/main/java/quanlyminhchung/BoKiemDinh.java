@@ -4,7 +4,6 @@
  */
 package quanlyminhchung;
 
-import static cauhinh.CauHinh.f;
 import static cauhinh.CauHinh.sc;
 import java.text.ParseException;
 import java.util.ArrayList;

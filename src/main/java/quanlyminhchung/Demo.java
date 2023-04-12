@@ -44,13 +44,13 @@ public class Demo {
         qlmc.themMC("src/main/resources/minhchung.txt");
         
         
-        System.out.print("Nhap ten: ");
-        String name = sc.nextLine();
-        if (qlmc.timKiemTheoPhongBan(name).isEmpty()) {
-            System.out.println("Khong tim thay minh chung!");
-        } else {
-            qlmc.timKiemTheoPhongBan(name).forEach(h -> h.hienThi());
-        }
+//        System.out.print("Nhap ten: ");
+//        String name = sc.nextLine();
+//        if (qlmc.timKiemTheoPhongBan(name).isEmpty()) {
+//            System.out.println("Khong tim thay minh chung!");
+//        } else {
+//            qlmc.timKiemTheoPhongBan(name).forEach(h -> h.hienThi());
+//        }
 //        qlmc.sapXep();
 //        qlmc.hienThi();
         /*QuanLyCongDan qlcd = new QuanLyCongDan();

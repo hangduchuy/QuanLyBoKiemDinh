@@ -5,14 +5,11 @@
 package quanlyminhchung;
 
 import static cauhinh.CauHinh.f;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
@@ -36,7 +33,6 @@ public class MinhChung {
         this.ten = ten;
         this.noiBanHanh = noiBanHanh;
         this.ngayBanHanh = ngayBanHanh;
-
     }
 
     public MinhChung(String id, String ten, String noiBanHanh, String ngayBanHanh) throws ParseException {
@@ -53,10 +49,6 @@ public class MinhChung {
                 .contains(kw.toLowerCase())).collect(Collectors.toList());
     }
     
-//    public List<MinhChung> timKiemMinhChungTheoPhongBan2(String kw) { // timtheo ten
-//        return this.dsPhongBan.stream().filter(c -> c.getMinhChung().equals(kw)).collect(Collectors.toList());
-//    }
-        
     public void themPhongBan(PhongBan... a) {
         this.dsPhongBan.addAll(Arrays.asList(a));
         for (PhongBan x : a) {

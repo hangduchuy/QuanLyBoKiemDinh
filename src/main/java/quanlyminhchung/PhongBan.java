@@ -24,6 +24,8 @@ public class PhongBan {
         this.ngayPhongBanCungCapMC = ngayPhongBanCungCapMC;
         this.ngayTaoMC = ngayTaoMC;
         this.minhChung = minhChung;
+        
+        this.minhChung.getDsPhongBan().add(this);
     }
 
     public PhongBan(String ten, String ngayPhongBanCungCapMC, String ngayTaoMC, MinhChung minhChung) throws ParseException {
