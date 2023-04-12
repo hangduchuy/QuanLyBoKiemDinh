@@ -52,6 +52,10 @@ public class MinhChung {
                 filter(h -> h.getTen().toLowerCase()
                 .contains(kw.toLowerCase())).collect(Collectors.toList());
     }
+    
+//    public List<MinhChung> timKiemMinhChungTheoPhongBan2(String kw) { // timtheo ten
+//        return this.dsPhongBan.stream().filter(c -> c.getMinhChung().equals(kw)).collect(Collectors.toList());
+//    }
         
     public void themPhongBan(PhongBan... a) {
         this.dsPhongBan.addAll(Arrays.asList(a));

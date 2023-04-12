@@ -4,10 +4,43 @@
  */
 package quanlyminhchung;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author Huy
  */
 public class PhongDamBaoChatLuong {
+    
+    private List<BoKiemDinh> boKiemDinh = new ArrayList<>();
+                 
+    public void themBoKiemDinh(BoKiemDinh... a) {
+        this.getBoKiemDinh().addAll(Arrays.asList(a));
+    }
+    
+    public void themBoKiemDinh(ArrayList<BoKiemDinh> ds) {
+        this.boKiemDinh.addAll(ds);
+    }
+   
+    /**
+     * @return the boKiemDinh
+     */
+    public List<BoKiemDinh> getBoKiemDinh() {
+        return boKiemDinh;
+    }
+
+    /**
+     * @param boKiemDinh the boKiemDinh to set
+     */
+    public void setBoKiemDinh(List<BoKiemDinh> boKiemDinh) {
+        this.boKiemDinh = boKiemDinh;
+    }
+    
+
+    /**
+     * @return the boKiemDinh
+     */
     
 }

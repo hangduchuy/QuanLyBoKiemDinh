@@ -78,6 +78,13 @@ public class QuanLyMinhChung {
         return this.danhSachMinhChung.stream().filter(c -> c.getTen().equals(ten)).collect(Collectors.toList());
     }
     
+    public List<MinhChung> timKiemTheoPhongBan(String tenPhongBan) {
+        return this.danhSachMinhChung.stream()
+                .filter(mc -> mc.getDsPhongBan().stream()
+                        .anyMatch(pb -> pb.getTen().equals(tenPhongBan)))
+                .collect(Collectors.toList());
+    }    
+    
     public List<MinhChung> timMinhChungTheoNoiBanHanh(String ten) { // timtheo ten
         return this.danhSachMinhChung.stream().filter(c -> c.getNoiBanHanh().equals(ten)).collect(Collectors.toList());
     }
@@ -86,14 +93,7 @@ public class QuanLyMinhChung {
         return this.danhSachMinhChung.stream().filter(h -> h.getNgayBanHanh().equals(kw) == true)
                 .collect(Collectors.toList());
     }
-      
-//    public List<MinhChung> timMinhChungTheoTenHoacPB(String kw) { // timtheo ten
-//        return this.danhSachMinhChung.stream().filter(c -> c.getNoiBanHanh().equals(kw)).collect(Collectors.toList());
-//    }
-    
-    
-    
-    
+          
     public void hienThi(){
         this.getDanhSachMinhChung().forEach(v -> v.hienThi());
     }

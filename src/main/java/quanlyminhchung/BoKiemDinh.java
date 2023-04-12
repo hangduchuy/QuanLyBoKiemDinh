@@ -4,6 +4,9 @@
  */
 package quanlyminhchung;
 
+import static cauhinh.CauHinh.f;
+import static cauhinh.CauHinh.sc;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,15 +14,18 @@ import java.util.List;
  *
  * @author Huy
  */
-class BoKiemDinh {
+public class BoKiemDinh {
     private String ten;
     private String khoa;
-    private List<TieuChuan> dsTieuChuan;
+    private List<TieuChuan> dsTieuChuan = new ArrayList<>();
 
- 
-    public BoKiemDinh(String ten) {
+    public BoKiemDinh() {
+       
+    }
+    
+    public BoKiemDinh(String ten, String khoa) {
         this.ten = ten;
-        this.dsTieuChuan = new ArrayList<>();
+        this.khoa = khoa;
     }
 
     public void themTieuChuan(TieuChuan standard) {
@@ -28,6 +34,13 @@ class BoKiemDinh {
 
     public void xoaTieuChuan(TieuChuan standard) {
         this.dsTieuChuan.remove(standard);
+    }
+    
+    public void nhapBoKiemDinh() throws ParseException, ClassNotFoundException, InstantiationException, Exception {
+        System.out.print("Nhap ten bo kiem dinh: ");
+        this.ten = sc.nextLine();
+        System.out.print("Nhap ten khoa: ");
+        this.khoa = sc.nextLine();       
     }
     
     public String getTen() {
