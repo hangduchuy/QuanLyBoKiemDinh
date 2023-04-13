@@ -5,8 +5,8 @@
 package quanlyminhchung;
 
 import static cauhinh.CauHinh.sc;
-import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,21 +25,45 @@ public class BoKiemDinh {
     public BoKiemDinh(String ten, String khoa) {
         this.ten = ten;
         this.khoa = khoa;
+        
+        this.dsTieuChuan = new ArrayList<>();
     }
 
+//    public void themTieuChuan(TieuChuan... a) {
+//        this.getDanhSachTieuChuan().addAll(Arrays.asList(a));
+//    }
+    
     public void themTieuChuan(TieuChuan standard) {
         this.dsTieuChuan.add(standard);
     }
 
+    public void themTieuChuan(TieuChuan... a) {
+        this.dsTieuChuan.addAll(Arrays.asList(a));
+        for (TieuChuan x : a) {
+            x.setBkd(this);
+        }
+    }
+    
     public void xoaTieuChuan(TieuChuan standard) {
         this.dsTieuChuan.remove(standard);
     }
     
-    public void nhapBoKiemDinh() throws ParseException, ClassNotFoundException, InstantiationException, Exception {
+    public void nhapBoKiemDinh(){
         System.out.print("Nhap ten bo kiem dinh: ");
+        sc.nextLine();
         this.ten = sc.nextLine();
         System.out.print("Nhap ten khoa: ");
         this.khoa = sc.nextLine();       
+    }
+    
+    public void hienThi() {
+        System.out.print("=============\n");
+        System.out.printf("Ten bo kiem dinh: %s\n", this.ten);
+        System.out.printf("Ten khoa: %s\n", this.khoa);
+    }
+    
+    public void hienThiTieuChuan(){
+        this.getDanhSachTieuChuan().forEach(v -> v.hienThi());
     }
     
     public String getTen() {

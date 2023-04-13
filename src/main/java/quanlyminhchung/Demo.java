@@ -16,12 +16,12 @@ import java.text.ParseException;
 public class Demo {
 
     public static void main(String[] args) throws ParseException, FileNotFoundException {
-        MinhChung mc1 = new MinhChung("1","Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
-        MinhChung mc2 = new MinhChung("2","Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
-        MinhChung mc3 = new MinhChung("3","Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
-        MinhChung mc4 = new MinhChung("4","Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
-        MinhChung mc5 = new MinhChung("5","Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
-        MinhChung mc6 = new MinhChung("6","Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
+        MinhChung mc1 = new MinhChung("Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
+        MinhChung mc2 = new MinhChung("Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
+        MinhChung mc3 = new MinhChung("Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
+        MinhChung mc4 = new MinhChung("Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
+        MinhChung mc5 = new MinhChung("Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
+        MinhChung mc6 = new MinhChung("Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
         //Phong Ban
         PhongBan pb1 = new PhongBan("Phong dao tao", "04/10/2023", "04/10/2023", mc1);
         PhongBan pb2 = new PhongBan("Phong tuyen dung", "03/10/2023", "03/10/2023", mc1);

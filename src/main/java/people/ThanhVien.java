@@ -81,7 +81,7 @@ public class ThanhVien {
         String noi= sc.nextLine();
         System.out.println("Ngay ban hanh");
         String ngay= sc.nextLine();
-        MinhChung a= new MinhChung(ma,ten,noi,ngay);
+        MinhChung a= new MinhChung(ten,noi,ngay);
         this.getDs().add(a);
     }
     
@@ -93,7 +93,7 @@ public class ThanhVien {
         File f = new File(path);
         try (Scanner sc = new Scanner(f)) {
             while (sc.hasNext()) {
-                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine());
                 this.ds.add(m);
             }
         }

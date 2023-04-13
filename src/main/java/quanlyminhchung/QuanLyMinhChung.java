@@ -34,7 +34,7 @@ public class QuanLyMinhChung {
         File f = new File(path);
         try (Scanner sc = new Scanner(f)) {
             while (sc.hasNext()) {
-                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine());
                 this.danhSachMinhChung.add(m);
             }
         }
@@ -50,9 +50,9 @@ public class QuanLyMinhChung {
                 .thenComparing(MinhChung::getTen, Comparator.reverseOrder()));
     }
     
-    public List<MinhChung> timKiem(String ten) { // timtheo ten
+    public List<MinhChung> timKiem(String ten) { // tim theo ten
         return this.danhSachMinhChung.stream()
-                .filter(c -> c.getTen().toLowerCase().contains(ten.toLowerCase()))
+                .filter(c -> c.getTen().toLowerCase().contains(ten))
                 .collect(Collectors.toList());       
     }
     
@@ -63,14 +63,14 @@ public class QuanLyMinhChung {
     
     public List<MinhChung> timMinhChungTheoNoiBanHanh(String ten) { // tim theo noi ban hanh
         return this.danhSachMinhChung.stream()
-                .filter(c -> c.getNoiBanHanh().toLowerCase().contains(ten.toLowerCase()))
+                .filter(c -> c.getNoiBanHanh().toLowerCase().contains(ten))
                 .collect(Collectors.toList());
     } 
     
     public List<MinhChung> timKiemTheoPhongBan(String tenPhongBan) {
         return this.danhSachMinhChung.stream()
                 .filter(mc -> mc.getDsPhongBan().stream()
-                        .anyMatch(pb -> pb.getTen().contains(tenPhongBan)))
+                        .anyMatch(pb -> pb.getTen().toLowerCase().contains(tenPhongBan)))
                 .collect(Collectors.toList());
     }
        

@@ -17,26 +17,31 @@ import java.util.stream.Collectors;
  * @author Huy
  */
 public class MinhChung {
-
-    private String id; // mã minh chứng
+    private static int dem = 0;
+    private int id; // mã minh chứng
     private String ten; // tên minh chứng
     private String noiBanHanh; // cơ quan ban hành minh chứng
     private Date ngayBanHanh; // ngày ban hành minh chứng
+    private TieuChi tc;
     private List<PhongBan> dsPhongBan = new ArrayList<>(); // danh sách các phòng ban chịu trách nhiệm cung cấp minh chứ
 
+    {
+        dem++;
+        this.setId(dem);
+    }
+    
     public MinhChung() {
 
     }
 
-    public MinhChung(String id, String ten, String noiBanHanh, Date ngayBanHanh) {
-        this.id = id;
+    public MinhChung(String ten, String noiBanHanh, Date ngayBanHanh) {
         this.ten = ten;
         this.noiBanHanh = noiBanHanh;
         this.ngayBanHanh = ngayBanHanh;
     }
 
-    public MinhChung(String id, String ten, String noiBanHanh, String ngayBanHanh) throws ParseException {
-        this(id, ten, noiBanHanh, f.parse(ngayBanHanh));
+    public MinhChung(String ten, String noiBanHanh, String ngayBanHanh) throws ParseException {
+        this(ten, noiBanHanh, f.parse(ngayBanHanh));
     }
 
     public void hienThi() {
@@ -68,14 +73,14 @@ public class MinhChung {
     /**
      * @return the id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -133,5 +138,19 @@ public class MinhChung {
      */
     public void setDsPhongBan(List<PhongBan> dsPhongBan) {
         this.dsPhongBan = dsPhongBan;
+    }
+
+    /**
+     * @return the tc
+     */
+    public TieuChi getTc() {
+        return tc;
+    }
+
+    /**
+     * @param tc the tc to set
+     */
+    public void setTc(TieuChi tc) {
+        this.tc = tc;
     }
 }

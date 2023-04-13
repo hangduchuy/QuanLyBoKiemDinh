@@ -15,13 +15,21 @@ import java.util.List;
 public class PhongDamBaoChatLuong {
     
     private List<BoKiemDinh> boKiemDinh = new ArrayList<>();
-                 
+
+    public PhongDamBaoChatLuong() {
+        this.boKiemDinh = new ArrayList<>();
+    }
+    
     public void themBoKiemDinh(BoKiemDinh... a) {
-        this.getBoKiemDinh().addAll(Arrays.asList(a));
+        this.boKiemDinh.addAll(Arrays.asList(a));  
     }
     
     public void themBoKiemDinh(ArrayList<BoKiemDinh> ds) {
         this.boKiemDinh.addAll(ds);
+    }
+    
+    public void hienThiBoKiemDinh(){
+        this.getBoKiemDinh().forEach(v -> v.hienThi());
     }
    
     /**

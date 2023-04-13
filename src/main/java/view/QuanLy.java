@@ -16,6 +16,7 @@ import quanlyminhchung.PhongBan;
 import quanlyminhchung.PhongDamBaoChatLuong;
 import quanlyminhchung.QuanLyMinhChung;
 import quanlyminhchung.TieuChi;
+import quanlyminhchung.TieuChuan;
 
 /**
  *
@@ -24,39 +25,56 @@ import quanlyminhchung.TieuChi;
 public class QuanLy {
 
     QuanLyMinhChung qlmc = new QuanLyMinhChung();
-    private PhongDamBaoChatLuong pdbcl = new PhongDamBaoChatLuong();
+    PhongDamBaoChatLuong pdbcl = new PhongDamBaoChatLuong();
 
     public static void main(String[] args) throws FileNotFoundException, ParseException, Exception {
 //        ThanhVien tv = new ThanhVien();
+        
         MinhChung mc = new MinhChung();
         QuanLy q = new QuanLy();       
-        BoKiemDinh kd = new BoKiemDinh();
+        BoKiemDinh bkd = new BoKiemDinh();
+        TieuChuan tchuan = new TieuChuan();
+        TieuChi tchi = new TieuChi();
         
 //        q.qlmc.themMC("src/main/resources/minhchung.txt");
 //        mc.themPhongBan("src/main/resources/phongban.txt");
 //        tv.themMinhChung("src/main/resources/minhchung.txt");
+        
+        //Bo Kiem Dinh
+        BoKiemDinh bkd1 = new BoKiemDinh("MOET", "cong nghe thong tin");
+        
+        //TieuChuan
+        TieuChuan tchuan1 = new TieuChuan("chuong trình va hoat dong giang day", "chuong trinh giang day, hoat dong ngoai khoa, hoat dong tu van va huong nghiep", bkd1);
+        TieuChuan tchuan2 = new TieuChuan("giao vien va nhan vien", "quyen va nghia vu cua giao vien, quyen va nghia va cua nhan vien, danh gia nang luc va nang luc phat trien", bkd1);
+        TieuChuan tchuan3 = new TieuChuan("danh gia va dam bao chat luong", "danh gia va dam bao chat luong giao duc, tieu chuan danh gia va kiem dinh ngoai, giam sat va phan hoi", bkd1);
+
+        //Tieu Chi
+        TieuChi tc1 = new TieuChi("Tieu chi dao tao", "Danh gia chat luong dao tao cua khoa bao gom cac hoat dong giang day, huong dan, hoc tap va kiem tra danh gia ket qua hoc tap cua sinh vien", tchuan1);
+        TieuChi tc2 = new TieuChi("Tieu chi ve doi ngu giang vien", "Danh gia chat luong doi ngu giang vien cua khoa, bao gom trinh do, kinh nghiem, nang luc giang day va nghien cuu khoa hoc, " 
+                +"cung nhu cac hoat dong ho tro sinh vien va cac hoat dong khac cua giang vien.", tchuan1);
+        TieuChi tc3 = new TieuChi("Tieu chi ve co so vat chat va trang thiet bi", "Danh gia chat luong co so vat chat va trang thiet bi cua khoa, bao gom day du, dap ung nhu cau cua hoat dong " 
+                +"dao tao va nghien cuu khoa học cua khoa.", tchuan2);
+        TieuChi tc4 = new TieuChi("Tieu che ve cac hoat dong ho tro sinh vien", "Danh gia chat", tchuan3);       
+        
         //Minh Chung
-        MinhChung mc1 = new MinhChung("1", "Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
-        MinhChung mc2 = new MinhChung("2", "Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
-        MinhChung mc3 = new MinhChung("3", "Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
-        MinhChung mc4 = new MinhChung("4", "Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
-        MinhChung mc5 = new MinhChung("5", "Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
-        MinhChung mc6 = new MinhChung("6", "Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
+        MinhChung mc1 = new MinhChung("Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
+        MinhChung mc2 = new MinhChung("Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
+        MinhChung mc3 = new MinhChung("Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
+        MinhChung mc4 = new MinhChung("Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
+        MinhChung mc5 = new MinhChung("Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
+        MinhChung mc6 = new MinhChung("Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
+        
         //Phong Ban
         PhongBan pb1 = new PhongBan("Phong dao tao", "04/10/2023", "04/10/2023", mc1);
         PhongBan pb2 = new PhongBan("Phong tuyen dung", "03/10/2023", "03/10/2023", mc1);
         PhongBan pb3 = new PhongBan("Phong chat luong", "05/10/2023", "05/10/2023", mc2);
         PhongBan pb4 = new PhongBan("Phong nhan su", "07/10/2023", "07/10/2023", mc3);
         PhongBan pb5 = new PhongBan("Phong kinh doanh", "08/10/2023", "08/10/2023", mc4);
-        PhongBan pb6 = new PhongBan("Phong dao tao", "05/10/2023", "04/10/2023", mc2);
-        //Tieu Chi
-        TieuChi tc1 = new TieuChi("1", "Tiêu chí đào tạo", "Đánh giá chất lượng đào tạo của khoa bao gồm các hoạt động giảng dạy, hướng dẫn, học tập và kiểm tra đánh giá kết quả học tập của sinh viên");
-        TieuChi tc2 = new TieuChi("2", "Tiêu chí về đội ngũ giảng viên", "Đánh giá chất lượng đội ngũ giảng viên của khoa, bao gồm trình độ, kinh nghiệm, năng lực giảng dạy và nghiên cứu khoa học, " 
-                +"cũng như các hoạt động hỗ trợ sinh viên và các hoạt động khác của giảng viên.");
-        TieuChi tc3 = new TieuChi("3", "Tiêu chí về cơ sở vật chất và trang thiết bị", "Đánh giá chất lượng cơ sở vật chất và trang thiết bị của khoa, bao gồm đầy đủ, đáp ứng nhu cầu của hoạt động " 
-                +"đào tạo và nghiên cứu khoa học của khoa.");
-        TieuChi tc4 = new TieuChi("4", "Tiêu chí về các hoạt động hỗ trợ sinh viên", "Đánh giá chất");
+        PhongBan pb6 = new PhongBan("Phong dao tao", "05/10/2023", "04/10/2023", mc2);      
 
+        q.pdbcl.themBoKiemDinh(bkd1);
+        bkd.themTieuChuan(tchuan1, tchuan2, tchuan3);
+        tchuan.themTieuChi(tc1, tc2, tc3, tc4);       
         mc.themPhongBan(pb1, pb2, pb3, pb4, pb5, pb6);
         q.qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
 
@@ -76,15 +94,25 @@ public class QuanLy {
             luaChon = sc.nextInt();
             switch (luaChon) {
                 case 1 -> {
-                    kd.nhapBoKiemDinh();
-//                    this.pdbcl.themBoKiemDinh(kd);
-                    System.out.println("Them bo kiem dinh thanh cong");
+                    bkd.nhapBoKiemDinh();
+                    q.pdbcl.themBoKiemDinh(bkd);                  
+                    System.out.print("Them bo kiem dinh thanh cong\n");
+                    System.out.print("==Danh sach tieu chuan==\n");
+                    q.pdbcl.hienThiBoKiemDinh();
                 }
                 case 2 -> {
-
-                }
+                    tchuan.nhapTieuChuan();
+                    bkd.themTieuChuan(tchuan);
+                    System.out.print("Them tieu chuan thanh cong\n");
+                    System.out.print("==Danh sach tieu chuan==\n");
+                    bkd.hienThiTieuChuan();
+                } 
                 case 3 -> {
-                    
+                    tchi.nhapTieuChi();
+                    tchuan.themTieuChi(tchi);
+                    System.out.print("Them tieu chi thanh cong\n");
+                    System.out.print("==Danh sach tieu chi==\n");
+                    tchuan.hienThiTieuChi();
                 }
                 case 4 -> {
 
@@ -226,9 +254,6 @@ public class QuanLy {
 
     }
 
-    /**
-     * @return the qlmc
-     */
     public QuanLyMinhChung getQlmc() {
         return qlmc;
     }
