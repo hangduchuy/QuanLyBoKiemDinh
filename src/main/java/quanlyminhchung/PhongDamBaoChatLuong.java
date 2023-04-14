@@ -70,12 +70,12 @@ public class PhongDamBaoChatLuong {
         this.dsTieuChuan.remove(q);
     }
     
-    public void xoaTieuChi(TieuChi q) {
+    public void xoaTieuChuan(TieuChi q) {
         this.dsTieuChi.remove(q);
     }
     
-    public void xoaTieuChi(List<TieuChi> q) {
-        this.dsTieuChi.removeAll(q);
+    public void xoaTieuChi(List<TieuChi> id) {
+        this.dsTieuChi.removeAll(id);
     }
         
     public void sapXep(){

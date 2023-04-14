@@ -330,11 +330,11 @@ public class QuanLy {
                 System.out.printf("%d/ %s\n", x.getId(), x.getTen());
             }           
             int choose = sc.nextInt();
-            
+                                        
+            List<TieuChi> tc = this.pdbcl.locIDTC(choose).getDanhSachTieuChi();
+            this.pdbcl.xoaTieuChi(tc);
             this.pdbcl.xoaTieuChuan(this.pdbcl.locIDTC(choose));
             System.out.println("Xoa du an thanh cong!");
-//            List<TieuChi> tc = this.pdbcl.locIDTC(choose).getDanhSachTieuChi();
-//            this.pdbcl.xoaTieuChi(tc);           
         }
     }
     
