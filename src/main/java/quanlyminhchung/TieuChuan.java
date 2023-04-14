@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class TieuChuan {
     
+    public int soTC = 0;
     private static int dem = 0;
     private int id;
     private String ten;
@@ -57,6 +58,10 @@ public class TieuChuan {
         this.ten = sc.nextLine();
         System.out.print("Nhap noi dung: ");
         this.ndTienChuan = sc.nextLine();
+    }
+    
+    public void xoaTieuChi(TieuChi q) {
+        this.dsTieuChi.remove(q);
     }
     
     public void hienThi() {        

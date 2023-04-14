@@ -4,10 +4,8 @@
  */
 package quanlyminhchung;
 
-import static cauhinh.CauHinh.f;
 import static cauhinh.CauHinh.sc;
 import java.util.ArrayList;
-
 import java.util.List;
 
 /**
@@ -57,7 +55,7 @@ public class TieuChi {
         this.minhChung.remove(minhChung);
     }
 
-   
+//   
     
 //    public void capNhatMinhChung(MinhChung minhChung, String tenMoi, Date ngayBanHanhMoi) {
 //        // tìm kiếm minh chứng trong danh sách
@@ -81,6 +79,10 @@ public class TieuChi {
 
     public void hienThi() {      
         System.out.printf("%s. %s, %s\n", this.id, this.ten, this.noiDung);
+    }
+    
+    public void hienThiMinhChung(){
+        this.minhChung.forEach(v -> v.hienThi());
     }
     
     // các phương thức getter và setter cho các thuộc tính của Criterion
@@ -153,8 +155,6 @@ public class TieuChi {
      */
     public void setTieuChuan(TieuChuan tieuChuan) {
         this.tieuChuan = tieuChuan;
-    }
-
-    
+    }   
     
 }

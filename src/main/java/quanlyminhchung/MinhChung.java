@@ -34,14 +34,17 @@ public class MinhChung {
 
     }
 
-    public MinhChung(String ten, String noiBanHanh, Date ngayBanHanh) {
+    public MinhChung(String ten, String noiBanHanh, Date ngayBanHanh, TieuChi tc) {
         this.ten = ten;
         this.noiBanHanh = noiBanHanh;
         this.ngayBanHanh = ngayBanHanh;
+        this.tc = tc;
+        
+        this.tc.getMinhChung().add(this);
     }
 
-    public MinhChung(String ten, String noiBanHanh, String ngayBanHanh) throws ParseException {
-        this(ten, noiBanHanh, f.parse(ngayBanHanh));
+    public MinhChung(String ten, String noiBanHanh, String ngayBanHanh, TieuChi tc) throws ParseException {
+        this(ten, noiBanHanh, f.parse(ngayBanHanh), tc);
     }
 
     public void hienThi() {

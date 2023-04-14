@@ -81,23 +81,23 @@ public class ThanhVien {
         String noi= sc.nextLine();
         System.out.println("Ngay ban hanh");
         String ngay= sc.nextLine();
-        MinhChung a= new MinhChung(ten,noi,ngay);
-        this.getDs().add(a);
+//        MinhChung a= new MinhChung(ten,noi,ngay);
+//        this.getDs().add(a);
     }
     
     public void themMinhChung(MinhChung p) {
         this.ds.add(p);
     }
     
-    public void themMinhChung(String path) throws FileNotFoundException, ParseException {
-        File f = new File(path);
-        try (Scanner sc = new Scanner(f)) {
-            while (sc.hasNext()) {
-                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine());
-                this.ds.add(m);
-            }
-        }
-    }
+//    public void themMinhChung(String path) throws FileNotFoundException, ParseException {
+//        File f = new File(path);
+//        try (Scanner sc = new Scanner(f)) {
+//            while (sc.hasNext()) {
+//                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine());
+//                this.ds.add(m);
+//            }
+//        }
+//    }
     
     public void ganMinhChung(){
         

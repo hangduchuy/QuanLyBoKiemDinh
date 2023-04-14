@@ -16,23 +16,23 @@ import java.text.ParseException;
 public class Demo {
 
     public static void main(String[] args) throws ParseException, FileNotFoundException {
-        MinhChung mc1 = new MinhChung("Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
-        MinhChung mc2 = new MinhChung("Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
-        MinhChung mc3 = new MinhChung("Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
-        MinhChung mc4 = new MinhChung("Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
-        MinhChung mc5 = new MinhChung("Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
-        MinhChung mc6 = new MinhChung("Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
+//        MinhChung mc1 = new MinhChung("Giay chung nhan hoan thanh khoa hoc", "Vo Van Tan", "04/10/2023");
+//        MinhChung mc2 = new MinhChung("Bang diem va ket qua hoc tap", "Nguyen Kiem", "03/10/2023");
+//        MinhChung mc3 = new MinhChung("Bao cao va bai tap", "Nguyen Kiem", "06/10/2023");
+//        MinhChung mc4 = new MinhChung("Phan hoi cua hoc vien va giang vien", "Ho Hao Hon", "02/10/2023");
+//        MinhChung mc5 = new MinhChung("Danh gia cua nha tuyen dung", "Nguyen Kiem", "03/10/2023");
+//        MinhChung mc6 = new MinhChung("Tai lieu hoc tap va giao trinh", "Vo Van Tan", "01/10/2023");
         //Phong Ban
-        PhongBan pb1 = new PhongBan("Phong dao tao", "04/10/2023", "04/10/2023", mc1);
-        PhongBan pb2 = new PhongBan("Phong tuyen dung", "03/10/2023", "03/10/2023", mc1);
-        PhongBan pb3 = new PhongBan("Phong chat luong", "05/10/2023", "05/10/2023", mc2);
-        PhongBan pb4 = new PhongBan("Phong nhan su", "07/10/2023", "07/10/2023", mc3);
-        PhongBan pb5 = new PhongBan("Phong kinh doanh", "08/10/2023", "08/10/2023", mc4);
-        //
-        QuanLyMinhChung qlmc = new QuanLyMinhChung();
-        MinhChung mc = new MinhChung();
-        mc.themPhongBan(pb1, pb2, pb3, pb4, pb5);
-        qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
+//        PhongBan pb1 = new PhongBan("Phong dao tao", "04/10/2023", "04/10/2023", mc1);
+//        PhongBan pb2 = new PhongBan("Phong tuyen dung", "03/10/2023", "03/10/2023", mc1);
+//        PhongBan pb3 = new PhongBan("Phong chat luong", "05/10/2023", "05/10/2023", mc2);
+//        PhongBan pb4 = new PhongBan("Phong nhan su", "07/10/2023", "07/10/2023", mc3);
+//        PhongBan pb5 = new PhongBan("Phong kinh doanh", "08/10/2023", "08/10/2023", mc4);
+//        //
+//        QuanLyMinhChung qlmc = new QuanLyMinhChung();
+//        MinhChung mc = new MinhChung();
+//        mc.themPhongBan(pb1, pb2, pb3, pb4, pb5);
+//        qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
         
 //        MinhChung mc = new MinhChung("01", "HiHi", "QuangNgai", "02/12/2002");
 //        MinhChung mc2 = new MinhChung("01", "HiHi", "QuangNAm", "02/12/2002");
@@ -41,7 +41,7 @@ public class Demo {
 
 //       tv.themMinhChung();
 //        tv.themMinhChung("src/main/resources/minhchung.txt");
-        qlmc.themMC("src/main/resources/minhchung.txt");
+//        qlmc.themMC("src/main/resources/minhchung.txt");
         
         
 //        System.out.print("Nhap ten: ");

@@ -4,15 +4,11 @@
  */
 package quanlyminhchung;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
@@ -30,15 +26,15 @@ public class QuanLyMinhChung {
         this.getDanhSachMinhChung().addAll(ds);
     }
     
-    public void themMC(String path) throws FileNotFoundException, ParseException {
-        File f = new File(path);
-        try (Scanner sc = new Scanner(f)) {
-            while (sc.hasNext()) {
-                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine());
-                this.danhSachMinhChung.add(m);
-            }
-        }
-    }
+//    public void themMC(String path) throws FileNotFoundException, ParseException {
+//        File f = new File(path);
+//        try (Scanner sc = new Scanner(f)) {
+//            while (sc.hasNext()) {
+//                MinhChung m = new MinhChung(sc.nextLine(), sc.nextLine(), sc.nextLine(), );
+//                this.danhSachMinhChung.add(m);
+//            }
+//        }
+//    }
     
     public void sapXep(){
         this.danhSachMinhChung.sort(Comparator.comparing(MinhChung::getNgayBanHanh)
