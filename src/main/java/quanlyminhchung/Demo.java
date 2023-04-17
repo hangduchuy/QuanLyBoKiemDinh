@@ -8,6 +8,7 @@ import static cauhinh.CauHinh.sc;
 import java.io.FileNotFoundException;
 import people.ThanhVien;
 import java.text.ParseException;
+import people.TruongPhong;
 
 /**
  *
@@ -33,17 +34,14 @@ public class Demo {
 //        MinhChung mc = new MinhChung();
 //        mc.themPhongBan(pb1, pb2, pb3, pb4, pb5);
 //        qlmc.themMC(mc1, mc2, mc3, mc4, mc5, mc6);
-        
+
 //        MinhChung mc = new MinhChung("01", "HiHi", "QuangNgai", "02/12/2002");
 //        MinhChung mc2 = new MinhChung("01", "HiHi", "QuangNAm", "02/12/2002");
 //        ThanhVien tv = new ThanhVien();
 //        QuanLyMinhChung qlmc = new QuanLyMinhChung();
-
 //       tv.themMinhChung();
 //        tv.themMinhChung("src/main/resources/minhchung.txt");
 //        qlmc.themMC("src/main/resources/minhchung.txt");
-        
-        
 //        System.out.print("Nhap ten: ");
 //        String name = sc.nextLine();
 //        if (qlmc.timKiemTheoPhongBan(name).isEmpty()) {
@@ -61,6 +59,17 @@ public class Demo {
 //        qlmc.themMC(mc, mc2);
 //        System.out.println("\n==========");
 //       qlmc.timMinhChung().forEach(c->c.hienThi());
+        PhongDamBaoChatLuong pdb = new PhongDamBaoChatLuong();
+        BoKiemDinh bk = new BoKiemDinh("MOEE", "Khoa hoc may tinh");
+        TruongPhong john = new TruongPhong("john");
+        TruongPhong john1 = new TruongPhong("john1");
+        ThanhVien john2=new ThanhVien("John2", "Bao cao");
+        //pdb.CapQuyenThanhVien(john2);
+        john1.themBoKiemDinh(bk);
+        //pdb.CapQuyenThanhVien(john);
+        //john1.themBoKiemDinh(bk);
+        pdb.hienThiBoKiemDinh();
+        //john1.themBoKiemDinh(bk);
+        //john1.hienThiBoKiemDinh();
     }
-
 }

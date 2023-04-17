@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
+import people.ThanhVien;
+import people.TruongPhong;
 import quanlyminhchung.BoKiemDinh;
 import quanlyminhchung.MinhChung;
 import quanlyminhchung.PhongBan;
@@ -38,7 +40,11 @@ public class QuanLy {
         MinhChung mc = new MinhChung();
         QuanLy q = new QuanLy();
         BoKiemDinh bkd = new BoKiemDinh();
-        TieuChuan tchuan = new TieuChuan();      
+        TieuChuan tchuan = new TieuChuan();
+        TruongPhong Du= new TruongPhong("Du");
+        TruongPhong Huy= new TruongPhong("Huy");
+        ThanhVien tv=new ThanhVien("Nguyễn Văn A", "Thêm bộ kiểm định");
+        ThanhVien tv2=new ThanhVien("Nguyễn Văn B", "Thêm tiêu chuẩn");
 
 //        q.qlmc.themMC("src/main/resources/minhchung.txt");
 //        mc.themPhongBan("src/main/resources/phongban.txt");
@@ -107,21 +113,24 @@ public class QuanLy {
                     + "5. Cap quyen cho thanh vien\n"
                     + "6. Quan ly thanh vien\n"
                     + "7. Quan ly minh chung\n"
-                    + "8. Xoa Tieu Chuan"
+                    + "8. Xoa Tieu Chuan\n"
                     + "0. Thoat chuong trinh");
             System.out.println("Vui long chon chuc nang: ");
             luaChon = sc.nextInt();
             switch (luaChon) {
                 case 1 -> {
+                    q.pdbcl.CapQuyenThanhVien(tv);
                     bkd.nhapBoKiemDinh();
-                    q.pdbcl.themBoKiemDinh(bkd);
+                    tv.themBoKiemDinh(bkd);
+                    
+                    //q.pdbcl.themBoKiemDinh(bkd);
                     System.out.print("Them bo kiem dinh thanh cong\n");
                     System.out.print("==Danh sach tieu chuan==\n");
-                    q.pdbcl.hienThiBoKiemDinh();
                 }
                 case 2 -> {
+                    q.pdbcl.CapQuyenThanhVien(tv);
                     tchuan.nhapTieuChuan();
-                    List<TieuChuan> tc = q.pdbcl.getDsTieuChuan();
+                    List<TieuChuan> tc = tv.getDsTieuChuan();
                     int SL = tc.size();
                     if (q.pdbcl.kiemTraTieuChuan() == false) {
                         System.out.printf("So tieu chuan dang co trong bo kiem dinh: %d\n",
@@ -129,7 +138,7 @@ public class QuanLy {
                         System.out.printf("Tieu chuan can dieu kien(%d <= SL <= %d)\n",
                                 SO_KIEM_DINH_TIEU_CHUAN_TOI_THIEU, SO_KIEM_DINH_TIEU_CHUAN_TOI_DA);
                     } else {
-                        q.pdbcl.themTieuChuan(tchuan);
+                        tv.themTieuChuan(tchuan);
                         System.out.print("Them tieu chuan thanh cong\n");
                         System.out.print("==Danh sach tieu chuan==\n");
                         q.pdbcl.hienThiTieuChuan();

@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import people.ThanhVien;
+import people.TruongPhong;
 
 /**
  *
@@ -27,7 +29,16 @@ public class PhongDamBaoChatLuong {
     public PhongDamBaoChatLuong() {
         this.boKiemDinh = new ArrayList<>();
     }
-    
+    public void CapQuyenTruongPhong(TruongPhong tp){
+        tp.setBoKiemDinh(getBoKiemDinh());
+        tp.setDsTieuChuan(getDsTieuChuan());
+        tp.setDsTieuChi(getDsTieuChi());
+    }
+    public void CapQuyenThanhVien(ThanhVien tv){
+        tv.setBoKiemDinh(getBoKiemDinh());
+        tv.setDsTieuChuan(getDsTieuChuan());
+        tv.setDsTieuChi(getDsTieuChi());
+    }
     public TieuChi locID(int id) {
         return this.dsTieuChi.stream().filter(h -> h.getId() == id).findFirst().get();
     }
@@ -43,11 +54,13 @@ public class PhongDamBaoChatLuong {
     }  
     
     public void themBoKiemDinh(BoKiemDinh... a) {
-        this.boKiemDinh.addAll(Arrays.asList(a));  
+        this.getBoKiemDinh().addAll(Arrays.asList(a));  
     }
-    
+    public void themBoKiemDinh(BoKiemDinh a){
+        this.getBoKiemDinh().add(a);
+    }
     public void themBoKiemDinh(ArrayList<BoKiemDinh> ds) {
-        this.boKiemDinh.addAll(ds);
+        this.getBoKiemDinh().addAll(ds);
     }
     
     public void themTieuChuan(TieuChuan... a) {
@@ -139,9 +152,6 @@ public class PhongDamBaoChatLuong {
     /**
      * @param boKiemDinh the boKiemDinh to set
      */
-    public void setBoKiemDinh(List<BoKiemDinh> boKiemDinh) {
-        this.boKiemDinh = boKiemDinh;
-    }
 
     /**
      * @return the dsTieuChi
@@ -153,9 +163,9 @@ public class PhongDamBaoChatLuong {
     /**
      * @param dsTieuChi the dsTieuChi to set
      */
-    public void setDsTieuChi(List<TieuChi> dsTieuChi) {
+    /*public void setDsTieuChi(List<TieuChi> dsTieuChi) {
         this.dsTieuChi = dsTieuChi;
-    }
+    }*/
 
     /**
      * @return the dsTieuChuan
@@ -167,9 +177,9 @@ public class PhongDamBaoChatLuong {
     /**
      * @param dsTieuChuan the dsTieuChuan to set
      */
-    public void setDsTieuChuan(List<TieuChuan> dsTieuChuan) {
+    /*public void setDsTieuChuan(List<TieuChuan> dsTieuChuan) {
         this.dsTieuChuan = dsTieuChuan;
-    }
+    }*/
 
     /**
      * @return the danhSachMinhChung

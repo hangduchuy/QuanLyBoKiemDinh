@@ -11,8 +11,12 @@ import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
+import quanlyminhchung.BoKiemDinh;
 import quanlyminhchung.MinhChung;
+import quanlyminhchung.TieuChi;
+import quanlyminhchung.TieuChuan;
 
 /**
  *
@@ -24,6 +28,9 @@ public class ThanhVien {
     private Date ngaySinh;
     private String quyen;
     private ArrayList<MinhChung> ds = new ArrayList<>();
+    private List<BoKiemDinh> boKiemDinh = new ArrayList<>();
+    private List<TieuChuan> dsTieuChuan = new ArrayList<>();
+    private List<TieuChi> dsTieuChi = new ArrayList<>();
     /**
      * @return the tenThanhVien
      */
@@ -57,6 +64,12 @@ public class ThanhVien {
         this.tenThanhVien = tenThanhVien;
     }
     
+     public void themBoKiemDinh(BoKiemDinh a){
+        this.getBoKiemDinh().add(a);
+    }
+     public void themTieuChuan(TieuChuan a){
+         this.getDsTieuChuan().add(a);
+     }
     public void XoaMinhChung(MinhChung mc){
         this.ds.remove(mc);
     }
@@ -165,4 +178,48 @@ public class ThanhVien {
     public void setDs(ArrayList<MinhChung> ds) {
         this.ds = ds;
     }
+
+    /**
+     * @param boKiemDinh the boKiemDinh to set
+     */
+    public void setBoKiemDinh(List<BoKiemDinh> boKiemDinh) {
+        this.boKiemDinh = boKiemDinh;
+    }
+    
+    /**
+     * @return the boKiemDinh
+     */
+    public List<BoKiemDinh> getBoKiemDinh() {
+        return boKiemDinh;
+    }
+
+    /**
+     * @return the dsTieuChuan
+     */
+    public List<TieuChuan> getDsTieuChuan() {
+        return dsTieuChuan;
+    }
+
+    /**
+     * @param dsTieuChuan the dsTieuChuan to set
+     */
+    public void setDsTieuChuan(List<TieuChuan> dsTieuChuan) {
+        this.dsTieuChuan = dsTieuChuan;
+    }
+
+    /**
+     * @return the dsTieuChi
+     */
+    public List<TieuChi> getDsTieuChi() {
+        return dsTieuChi;
+    }
+
+    /**
+     * @param dsTieuChi the dsTieuChi to set
+     */
+    public void setDsTieuChi(List<TieuChi> dsTieuChi) {
+        this.dsTieuChi = dsTieuChi;
+    }
+
+    
 }
